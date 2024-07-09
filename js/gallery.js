@@ -75,7 +75,7 @@ function imageMarkup({ preview, original, description }) {
           <img
             class="gallery-image"
             src="${preview}"
-            data-source="large-image.jpg"
+            data-source="${original}"
             alt="${description}"
           />
         </a>
@@ -91,13 +91,15 @@ function insertImages() {
   const markup = imagesMarkup(images);
   control.listEl.innerHTML = markup;
 }
+
 insertImages();
 
 control.listEl.addEventListener("click", (e) => {
+  e.preventDefault();
   if (e.target === e.currentTarget) return;
 
   const item = basicLightbox.create(`
-      <img src="${e.target.children[0].href}" width="800" height="600" style=" user-select = none">
+      <img src="${e.target.dataset.source}" width="800" height="600" style=" user-select = none">
   `);
   item.show();
 });
