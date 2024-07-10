@@ -99,7 +99,7 @@ control.listEl.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) return;
 
   const item = basicLightbox.create(`
-      <img src="${e.target.dataset.source}" width="800" height="600" style=" user-select = none">
+      <img src='${e.target.dataset.source}' width="800" height="600" style=" user-select = none">
   `);
   item.show();
 });
