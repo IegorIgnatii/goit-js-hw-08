@@ -83,8 +83,8 @@ function imageMarkup({ preview, original, description }) {
       </li>`;
 }
 
-function imagesMarkup(arr) {
-  return arr.map(imageMarkup).join("");
+function imagesMarkup(array) {
+  return array.map(imageMarkup).join("");
 }
 
 function insertImages() {
@@ -103,3 +103,5 @@ control.listEl.addEventListener("click", (e) => {
   `);
   item.show();
 });
+
+insertImages();
