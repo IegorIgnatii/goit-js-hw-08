@@ -70,12 +70,12 @@ const control = {
 };
 
 function imageMarkup({ preview, original, description }) {
-  return `  <li class="gallery-item">
+  return `  <li class="gallery-item" data-source="${original}">
         <a class="gallery-link" href=${original}>
           <img
             class="gallery-image"
             src="${preview}"
-            data-source="${original}"
+            
             alt="${description}"
           />
         </a>
